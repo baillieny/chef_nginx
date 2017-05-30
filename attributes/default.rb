@@ -18,7 +18,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
 # In order to update the version, the checksum attribute must be changed too.
 # This attribute is defined in the source.rb attribute file
@@ -39,6 +38,9 @@ default['nginx']['ulimit']       = '1024'
 # this is ignored if install_method is set to source
 default['nginx']['repo_source']    = 'nginx'
 default['nginx']['install_method'] = 'package'
+
+# set this when installing a redhat maintained version of nginx
+default['nginx']['service_name'] = 'nginx'
 
 case node['platform_family']
 when 'debian'
